@@ -1,19 +1,17 @@
-<p id="notice"><%= notice %></p>
+<div class="flex items-center justify-between flex-col pt-20 pb-[120px]">
+  <div class="max-w-2xl px-8 py-4 bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div class="flex items-center justify-between">
+      <p class="px-3 py-1 text-sm font-bold text-gray-100 transition-colors duration-300 transform bg-gray-600 rounded cursor-pointer hover:bg-gray-500" tabindex="0" role="button"><%= @task.status %></p>
+    </div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @task.title %>
-</p>
+    <div class="mt-2">
+      <h2 href="#" class="text-xl font-bold text-gray-700 dark:text-white hover:text-gray-600 dark:hover:text-gray-200 hover:underline" tabindex="0" role="link"><%= @task.title %></h2>
+      <p class="mt-2 text-gray-600 dark:text-gray-300"><%= @task.description %></p>
+    </div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
-
-<p>
-  <strong>Status:</strong>
-  <%= @task.status %>
-</p>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+    <div class="flex items-center mt-10 gap-4">
+      <%= link_to '編集', edit_task_path(@task), class: "px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80" %>
+      <%= link_to '戻る', tasks_path, class: "px-6 py-2 font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-600 rounded-lg hover:bg-blue-500 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-80" %>
+    </div>
+  </div>
+</div>
